@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <!-- My CSS -->
+    <link href="./css/style.css" rel="stylesheet" />
+
+    <title>Cliente Bsale</title>
+  </head>
+  <body class="">
+    <!-- Header -->
+    <header
+      class="bg-secondary py-3 d-flex justify-content-center align-items-center"
+    >
+      <h1 class="h1 font-weight-bold">bsale</h1>
+    </header>
+    <!-- Cotenido -->
+    <main class="container-fluid mb-2">
+      <!-- Seccion de Filtros -->
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12">
+          <div class="container-fluid mt-4">
+            <div class="mx-auto">
+              <!-- Buscar por Nombre -->
+              <form>
+                <div class="input-group input-group-sm mb-3">
+                  <span class="input-group-text">Producto</span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    maxlength="30"
+                    value=""
+                    placeholder="Ingrese nombre del producto"
+                    id="inputName"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    class="btn bg-success"
+                    onclick="onClickBuscar(event)"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-search"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+              <!-- Filtro por Categoria -->
+              <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text">Categoria</span>
+                <select
+                  class="form-select-md text-capitalize"
+                  id="selectFilterCategory"
+                  onchange="onChangeAttribute()"
+                  name="selectFilterCategory"
+                >
+                  <option selected disabled style="display: none" value="0">
+                    ---- Seleccionar ----
+                  </option>
+                </select>
+              </div>
+              <!-- Ordenar Productos -->
+              <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text">Ordenar Por</span>
+                <select
+                  class="form-select-md text-capitalize"
+                  id="selectOrdenar"
+                  name="selectOrdenar"
+                  onchange="onChangeAttribute()"
+                >
+                  <option selected disabled style="display: none" value="0">
+                    ---- Seleccionar ----
+                  </option>
+                  <option value="1">Nombre</option>
+                  <option value="2">Precio menor</option>
+                  <option value="3">Precio mayor</option>
+                </select>
+              </div>
+
+              <!-- Productos en descuento -->
+              <div class="input-group-sm">
+                <span class="input-group-text d-inline w-50">En Descuento</span>
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="checkBoxDiscount"
+                  onchange="onChangeAttribute()"
+                />
+              </div>
+              <!-- Limpiar Filtros -->
+              <button class="btn btn-sm btn-danger mt-3" onclick="clearFilter()">
+                Limpiar Filtros
+              </button>
+              <div
+                class="alert alert-danger py-1 w-75 mx-auto mt-3"
+                id="alerta"
+                role="alert"
+              >
+                Ingrese un producto válido
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Seccion para mostrar productos -->
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 py-3">
+          <div class="container-fluid">
+            <div class="h6" id="titleBusqueda"></div>
+            <div class="wrapper" id="wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer fixed-bottom bg-light py-2 mt-4">
+      <div class="container text-center">
+        <span class="text-muted">Desarrollado por Manuel Lopez.</span>
+      </div>
+    </footer>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- My Js -->
+    <script type="text/javascript" src="./js/javas.js"></script>
+  </body>
+</html>

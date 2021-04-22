@@ -1,0 +1,71 @@
+h1 {
+    color: orange;
+}
+
+.form-check-label {
+    width: 7rem;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+@media only screen and (max-width: 1330px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .input-group-text {
+        width: 5.3rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .input-group-text {
+        width: 5.3rem;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .input-group-text {
+        width: 5.3rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .input-group-text {
+        width: 6rem;
+    }
+}
+
+.card {
+    width: 13rem;
+    margin: 1rem;
+}
+
+p {
+    height: 2rem;
+    margin-bottom: 0px;
+}
+
+.card-title {
+    height: 40px;
+}
+
+img {
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+}
+
+#alerta {
+    display: none;
+}
